@@ -6,6 +6,24 @@ using UnityEngine.Video;
 
 public class SceneFade : MonoBehaviour
 {
+    #region SINGLETON
+
+    static private SceneFade instance;
+
+    static public SceneFade GetInstance() { return instance; }
+
+    private void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
     private Animator animator;
     private int SceneIndex;
     private bool videoEnded=false;
@@ -18,13 +36,10 @@ public class SceneFade : MonoBehaviour
     }
     void Update()
     {
-        if (CheckSkipScene())
-        {
             if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey("enter") || Input.GetKey(KeyCode.Space) || videoEnded)
             {
                 FadeLevel(SceneManager.GetActiveScene().buildIndex + 1);
             }
-        }
     }
     public void FadeLevel(int SceneToTransition)
     {
