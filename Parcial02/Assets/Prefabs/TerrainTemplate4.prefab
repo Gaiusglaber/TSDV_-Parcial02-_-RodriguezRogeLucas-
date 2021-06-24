@@ -135,8 +135,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 18.588306, y: 8.269696, z: -0.00085004995}
-    m_Extent: {x: 34.74746, y: 11.311813, z: 0.00085004995}
+    m_Center: {x: 17.15107, y: -0.6103802, z: -0.00085004995}
+    m_Extent: {x: 39.736652, y: 20.191887, z: 0.00085004995}
 --- !u!114 &2855061527291648724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -2.0000007, y: -2, z: 0}
+    - position: {x: -21.852875, y: -19.55849, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 24.354015, y: -1.8775108, z: 0}
+    - position: {x: 56.27617, y: -20.268482, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 11.650504, y: -2.5428016, z: 0}
+    - position: {x: 38.579758, y: -19.312174, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 2, y: -2.0000005, z: 0}
+    - position: {x: 11.425247, y: -19.480799, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -336,10 +336,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.9999851, y: -2.001}
-  - {x: -15.150313, y: -2.4102964}
-  - {x: -15.6151495, y: 2.0007713}
-  - {x: -5.4362803, y: 3.9761615}
+  - {x: -21.854301, y: -19.559494}
+  - {x: -15.150397, y: -2.4093726}
+  - {x: -15.6151495, y: 2.0007699}
+  - {x: -5.666547, y: 3.9761677}
   - {x: 0.7979191, y: 7.0821023}
   - {x: 9.62369, y: 7.1338854}
   - {x: 13.421334, y: 9.080854}
@@ -349,12 +349,13 @@ EdgeCollider2D:
   - {x: 41.249493, y: 13.659136}
   - {x: 45.493942, y: 6.792155}
   - {x: 52.112606, y: 2.000162}
-  - {x: 52.74832, y: -1.8785353}
-  - {x: 24.354069, y: -1.8785095}
-  - {x: 11.650449, y: -2.5438}
-  - {x: 2, y: -2.0010004}
-  - {x: -1.9490378, y: -2.001}
-  - {x: -1.9999851, y: -2.001}
+  - {x: 52.748127, y: -1.877347}
+  - {x: 56.277397, y: -20.269577}
+  - {x: 38.579765, y: -19.313173}
+  - {x: 11.425249, y: -19.481798}
+  - {x: -20.704283, y: -19.556808}
+  - {x: -21.118917, y: -19.557777}
+  - {x: -21.854301, y: -19.559494}
 --- !u!1001 &796231781413457728
 PrefabInstance:
   m_ObjectHideFlags: 0

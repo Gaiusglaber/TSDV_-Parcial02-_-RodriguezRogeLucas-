@@ -90,8 +90,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 25.417883, y: 3.517029, z: -0.00075005}
-    m_Extent: {x: 27.917883, y: 6.5591464, z: 0.00075005}
+    m_Center: {x: 27.12678, y: -4.0337934, z: -0.0007501}
+    m_Extent: {x: 31.453127, y: 14.109967, z: 0.0007501}
 --- !u!114 &7912707045095996622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 24.354015, y: -1.8775108, z: 0}
+    - position: {x: 57.8763, y: -17.599176, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 11.650504, y: -2.5428016, z: 0}
+    - position: {x: 23.530039, y: -15.469945, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 2, y: -2.0000005, z: 0}
+    - position: {x: -3.760744, y: -17.0805, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -273,7 +273,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.001, y: -2.001}
+  - {x: -2.001, y: -1.9999408}
   - {x: -2.001, y: 2.0010033}
   - {x: 5.433742, y: 1.9755555}
   - {x: 7.6766253, y: 2.8408725}
@@ -284,13 +284,12 @@ EdgeCollider2D:
   - {x: 38.543488, y: 5.566433}
   - {x: 41.528324, y: 2.7622538}
   - {x: 52.112537, y: 2.0009365}
-  - {x: 52.74832, y: -1.8785353}
-  - {x: 24.354069, y: -1.8785095}
-  - {x: 11.650449, y: -2.5438}
-  - {x: 2, y: -2.0010004}
-  - {x: -1.4554074, y: -2.001}
-  - {x: -1.5, y: -2.001}
-  - {x: -2.001, y: -2.001}
+  - {x: 52.748096, y: -1.877225}
+  - {x: 57.87771, y: -17.600275}
+  - {x: 23.530096, y: -15.4709425}
+  - {x: -3.7619028, y: -16.99639}
+  - {x: -2.0225427, y: -2.1834085}
+  - {x: -2.001, y: -1.9999408}
 --- !u!1 &7306038450025961864
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +301,7 @@ GameObject:
   - component: {fileID: 2073211908640042745}
   - component: {fileID: 8089961350968210982}
   m_Layer: 0
-  m_Name: TerrainTemplate1 (1)
+  m_Name: TerrainTemplate3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

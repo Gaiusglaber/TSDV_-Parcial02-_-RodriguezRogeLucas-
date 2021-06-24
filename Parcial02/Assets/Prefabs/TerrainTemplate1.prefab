@@ -135,8 +135,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 25.417883, y: 4.8154607, z: -0.00070005}
-    m_Extent: {x: 27.917883, y: 7.8575783, z: 0.00070005}
+    m_Center: {x: 25.22941, y: -3.7321606, z: -0.0007001}
+    m_Extent: {x: 38.61897, y: 16.405197, z: 0.0007001}
 --- !u!114 &512200496354907407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 24.354015, y: -1.8775108, z: 0}
+    - position: {x: 63.419804, y: -19.637379, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 11.650504, y: -2.5428016, z: 0}
+    - position: {x: 12.485369, y: -19.176214, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 2, y: -2.0000005, z: 0}
+    - position: {x: -12.9853525, y: -17.08744, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -309,7 +309,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.001, y: -2.001}
+  - {x: -2.001, y: -1.9996741}
   - {x: -2.001, y: 2.001}
   - {x: 1.9998536, y: 2.0009892}
   - {x: 7.9901237, y: 2.886473}
@@ -319,13 +319,12 @@ EdgeCollider2D:
   - {x: 35.1766, y: 12.173861}
   - {x: 41.80927, y: 7.209409}
   - {x: 52.11207, y: 2.0008926}
-  - {x: 52.74832, y: -1.8785353}
-  - {x: 24.354069, y: -1.8785095}
-  - {x: 11.650449, y: -2.5438}
-  - {x: 2, y: -2.0010004}
-  - {x: -1.4554074, y: -2.001}
-  - {x: -1.5, y: -2.001}
-  - {x: -2.001, y: -2.001}
+  - {x: 52.748, y: -1.8770204}
+  - {x: 63.420662, y: -19.636864}
+  - {x: 12.485305, y: -18.718433}
+  - {x: -12.985415, y: -17.08844}
+  - {x: -2.1407697, y: -2.1916363}
+  - {x: -2.001, y: -1.9996741}
 --- !u!1001 &3136841115783626907
 PrefabInstance:
   m_ObjectHideFlags: 0
