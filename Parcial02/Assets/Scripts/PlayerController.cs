@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float boundsZoomCamera=0;
     private float CantZoomCamera = 3;
     private float StartZoomCamera = 5;
+    [Range(0,5)]public float Distancex,Distancey;
     private bool canZoom = false;
     void Start()
     {
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 10);
+        camera.transform.position = new Vector3(transform.position.x+Distancex, transform.position.y-Distancey, transform.position.z-10);
         Zoom();
     }
     public void Movement()
