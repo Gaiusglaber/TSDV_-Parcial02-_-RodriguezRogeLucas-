@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(-transform.rotation.z, speedForce * Time.deltaTime));
+            GetComponentInChildren<Animator>().SetTrigger("Flying");
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().ResetTrigger("Flying");
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
