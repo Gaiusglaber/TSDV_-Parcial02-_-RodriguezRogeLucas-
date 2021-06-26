@@ -18,9 +18,15 @@ public class MainMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey("enter") || Input.GetKey(KeyCode.Space) || videoEnded)
+        if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey("enter") ||pressed)
         {
+            animatorPlayButton.SetTrigger("Selected");
             StartCoroutine("PlayPressed");
+        }
+        if (Fade.faded)
+        {
+            Fade.faded = false;
+            SceneManager.LoadScene(SceneIndex);
         }
     }
     public void Play()
@@ -36,16 +42,13 @@ public class MainMenu : MonoBehaviour
         SceneIndex = SceneToTransition;
         animatorScene.SetTrigger("FadeOut");
     }
-    public void FadeComplete()
-    {
-        SceneManager.LoadScene(SceneIndex);
-    }
     void CheckOver(VideoPlayer vp)
     {
         videoEnded = true;
     }
     IEnumerator PlayPressed()
     {
+
         pressed = false;
         yield return new WaitForSeconds(1);
         FadeLevel(SceneManager.GetActiveScene().buildIndex + 1);
