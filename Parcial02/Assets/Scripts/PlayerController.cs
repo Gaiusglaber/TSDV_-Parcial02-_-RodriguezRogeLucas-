@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{ 
+{
+    public float gas=10000f;
     [SerializeField][Range(0, 50)] float speedForce;
     [SerializeField] [Range(0, 50)] float speedRotation;
     public delegate void ZoomCamera(bool isInside);
@@ -19,8 +20,6 @@ public class PlayerController : MonoBehaviour
     {
         camera = Camera.main;
     }
-
-    // Update is called once per frame
     void Update()
     {
         Movement();
@@ -29,10 +28,12 @@ public class PlayerController : MonoBehaviour
     }
     public void Movement()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        float time = Time.deltaTime;
+        if (Input.GetKey(KeyCode.UpArrow)&&gas>=0)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(-transform.rotation.z, speedForce * Time.deltaTime));
             GetComponentInChildren<Animator>().SetTrigger("Flying");
+            gas --;
         }
         else
         {
