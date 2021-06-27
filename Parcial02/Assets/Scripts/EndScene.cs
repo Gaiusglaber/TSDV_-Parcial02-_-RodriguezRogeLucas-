@@ -23,7 +23,7 @@ public class EndScene : MonoBehaviour
             next.SetActive(false);
         }
     }
-    private void LateUpdate()
+    private void Update()
     {
         SceneFade();
     }

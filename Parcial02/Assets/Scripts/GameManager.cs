@@ -20,15 +20,18 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
-    public bool win = false;
+    public bool win;
     public bool gameOver = false;
     public void GameOver()
     {
         if (gameOver)
         {
             GameObject animatorScene = GameObject.FindGameObjectWithTag("SceneTransition");
-            animatorScene.GetComponent<Animator>().SetTrigger("FadeOut");
-            StartCoroutine("Transition");
+            if (animatorScene != null)
+            {
+                animatorScene.GetComponent<Animator>().SetTrigger("FadeOut");
+                StartCoroutine("Transition");
+            }
         }
     }
     public void TransitionToNewScene()
