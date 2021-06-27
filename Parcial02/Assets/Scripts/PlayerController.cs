@@ -80,4 +80,10 @@ public class PlayerController : MonoBehaviour
             ZoomAction(false);
         }
     }
+    public void OnDestroy()
+    {
+        GameManager.GetInstance().win = false;
+        GameManager.GetInstance().gameOver = true;
+        GameManager.GetInstance().GameOver();
+    }
 }
