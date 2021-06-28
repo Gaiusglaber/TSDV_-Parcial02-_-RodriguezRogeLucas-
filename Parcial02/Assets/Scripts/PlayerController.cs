@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.GetInstance().pause)
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            GetComponent<Rigidbody2D>().velocity = Movement;
             if (Input.GetKey(KeyCode.UpArrow) && gas >= 0)
             {
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(-transform.rotation.z, speedForce * Time.deltaTime));

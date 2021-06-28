@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     }
     public void SceneFade()
     {
-        if (Fade.faded)
+        if (Fade.faded&&SceneIndex!=0)
         {
             Fade.faded = false;
             SceneManager.LoadScene(SceneIndex);
@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
     }
     public void BackButtonPressed()
     {
+        GameManager.GetInstance().pause = false;
         StartCoroutine("GoBack");
     }
     public void ResumeButtonPressed()
