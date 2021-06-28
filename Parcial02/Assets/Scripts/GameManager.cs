@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     static public GameManager GetInstance() { return instance; }
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         if (!instance)
         {
             instance = this;
@@ -22,6 +23,13 @@ public class GameManager : MonoBehaviour
     #endregion
     public bool win;
     public bool gameOver = false;
+    public int HighScore = 0;
+    public int level = 0;
+
+    private void Start()
+    {
+        
+    }
     public void GameOver()
     {
         if (gameOver)

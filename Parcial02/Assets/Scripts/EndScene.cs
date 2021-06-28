@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndScene : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EndScene : MonoBehaviour
     public GameObject next;
     public GameObject win;
     public GameObject lose;
+    public Text ScoreText;
     private int SceneIndex;
     private void Start()
     {
@@ -18,10 +20,11 @@ public class EndScene : MonoBehaviour
             win.SetActive(true);
         }
         else
-        {
+        { 
             lose.SetActive(true);
             next.SetActive(false);
         }
+        ScoreText.text = GameManager.GetInstance().HighScore.ToString();
     }
     private void Update()
     {
@@ -30,6 +33,8 @@ public class EndScene : MonoBehaviour
     public void Back()
     {
         StartCoroutine("BackPressed");
+        GameManager.GetInstance().gameOver = false;
+        GameManager.GetInstance().HighScore = 0;
     }
     public void SceneFade()
     {
@@ -41,6 +46,7 @@ public class EndScene : MonoBehaviour
     }
     public void Next()
     {
+        GameManager.GetInstance().gameOver = false;
         StartCoroutine("NextPressed");
     }
     public void FadeLevel(int SceneToTransition)
@@ -57,6 +63,7 @@ public class EndScene : MonoBehaviour
     IEnumerator BackPressed()
     {
         yield return new WaitForSeconds(1);
+        GameManager.GetInstance().HighScore = 0;
         FadeLevel(SceneManager.GetActiveScene().buildIndex - 3);
         yield return null;
     }
