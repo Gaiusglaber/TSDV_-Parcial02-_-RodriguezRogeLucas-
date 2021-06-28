@@ -34,7 +34,6 @@ public class EndScene : MonoBehaviour
     {
         StartCoroutine("BackPressed");
         GameManager.GetInstance().gameOver = false;
-        GameManager.GetInstance().HighScore = 0;
     }
     public void SceneFade()
     {
@@ -63,7 +62,6 @@ public class EndScene : MonoBehaviour
     IEnumerator BackPressed()
     {
         yield return new WaitForSeconds(1);
-        GameManager.GetInstance().HighScore = 0;
         FadeLevel(SceneManager.GetActiveScene().buildIndex - 3);
         yield return null;
     }

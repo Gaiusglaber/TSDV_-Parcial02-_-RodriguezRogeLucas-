@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
+    public GameObject scoreObjetc;
+    public Text score;
     public Animator animatorPlayButton;
     public Animator animatorScene;
     private int SceneIndex;
     private bool pressed;
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("HighScore") < GameManager.GetInstance().HighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", GameManager.GetInstance().HighScore);
+        }
+        score.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        GameManager.GetInstance().HighScore = 0;
+    }
     void Update()
     {
         InputController();
@@ -37,6 +49,14 @@ public class MainMenu : MonoBehaviour
     public void Credits()
     {
         StartCoroutine("CreditsPressed");
+    }
+    public void MouseOnPlay()
+    {
+        scoreObjetc.SetActive(true);
+    }
+    public void MouseExitPlay()
+    {
+        scoreObjetc.SetActive(false);
     }
     public void Exit()
     {
