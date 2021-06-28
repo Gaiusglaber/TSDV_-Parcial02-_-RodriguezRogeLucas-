@@ -10,7 +10,6 @@ public class Plataform : MonoBehaviour
         if (collision.transform.tag == "Player"&&!landed)
         {
             landed = true;
-            //collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             if (CanLand(collision))
             {
                 GameManager.GetInstance().HighScore += 50;

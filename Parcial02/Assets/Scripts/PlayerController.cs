@@ -29,8 +29,11 @@ public class PlayerController : MonoBehaviour
     }
     public void Movement()
     {
+        Vector2 Movement = GetComponent<Rigidbody2D>().velocity;
         if (!GameManager.GetInstance().pause)
         {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().velocity = Movement;
             if (Input.GetKey(KeyCode.UpArrow) && gas >= 0)
             {
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(-transform.rotation.z, speedForce * Time.deltaTime));
@@ -49,6 +52,10 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Rotate(0, 0, -speedRotation * Time.deltaTime);
             }
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
         }
     }
     public void ZoomInOut(bool isInside)
