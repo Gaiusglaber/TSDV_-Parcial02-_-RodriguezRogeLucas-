@@ -11,12 +11,10 @@ public class TerrainInstantiator : MonoBehaviour
     public float MinY = 10;
     public GameObject TerrainPrefab;
     public int pointsSpriteShape = 5;
-    private Camera camera;
     private void Start()
     {
         float InitialPos = TerrainPrefab.transform.localScale.x / 2;
         terrain.spline.Clear();
-        camera = Camera.main;
         for (int i = 0; i < pointsSpriteShape; i++)
         {
             terrain.spline.InsertPointAt(i, new Vector3(InitialPos * i, Random.Range(MinY, MaxY), 0));
@@ -29,7 +27,7 @@ public class TerrainInstantiator : MonoBehaviour
         {
             terrain.spline.SetPosition(i, new Vector3(terrain.spline.GetPosition(i).x, terrain.spline.GetPosition(RandomPositionX).y, terrain.spline.GetPosition(i).z));
         }
-        Instantiate(plataformPrefab,new Vector3(terrain.spline.GetPosition(RandomPositionX+2).x, terrain.spline.GetPosition(RandomPositionX + 2).y+0.6f, terrain.spline.GetPosition(RandomPositionX + 2).z),Quaternion.identity );
+        Instantiate(plataformPrefab,new Vector3(terrain.spline.GetPosition(RandomPositionX+2).x+terrain.transform.position.x, terrain.spline.GetPosition(RandomPositionX + 2).y+0.6f, terrain.spline.GetPosition(RandomPositionX + 2).z),Quaternion.identity );
     }
     void OnCollisionEnter2D(Collision2D collision)
     {

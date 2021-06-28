@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     #endregion
     public bool win;
     public bool gameOver = false;
+    public bool pause = false;
     public int HighScore;
     public int level = 0;
 

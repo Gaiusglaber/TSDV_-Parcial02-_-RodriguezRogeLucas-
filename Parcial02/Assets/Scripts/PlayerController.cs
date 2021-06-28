@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float gas=10000f;
+    public GameObject explotionPrefab;
     [SerializeField][Range(0, 50)] float speedForce;
     [SerializeField] [Range(0, 50)] float speedRotation;
     public delegate void ZoomCamera(bool isInside);
@@ -23,29 +24,31 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
-        camera.transform.position = new Vector3(transform.position.x+Distancex, transform.position.y-Distancey, transform.position.z-10);
+        
         Zoom();
     }
     public void Movement()
     {
-        float time = Time.deltaTime;
-        if (Input.GetKey(KeyCode.UpArrow)&&gas>=0)
+        if (!GameManager.GetInstance().pause)
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(-transform.rotation.z, speedForce * Time.deltaTime));
-            GetComponentInChildren<Animator>().SetTrigger("Flying");
-            gas --;
-        }
-        else
-        {
-            GetComponentInChildren<Animator>().ResetTrigger("Flying");
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(0, 0, speedRotation * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, 0, -speedRotation * Time.deltaTime);
+            if (Input.GetKey(KeyCode.UpArrow) && gas >= 0)
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(-transform.rotation.z, speedForce * Time.deltaTime));
+                GetComponentInChildren<Animator>().SetTrigger("Flying");
+                gas--;
+            }
+            else
+            {
+                GetComponentInChildren<Animator>().ResetTrigger("Flying");
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Rotate(0, 0, speedRotation * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Rotate(0, 0, -speedRotation * Time.deltaTime);
+            }
         }
     }
     public void ZoomInOut(bool isInside)
@@ -79,5 +82,10 @@ public class PlayerController : MonoBehaviour
         {
             ZoomAction(false);
         }
+    }
+    void OnDisable()
+    {
+        if (!this.gameObject.scene.isLoaded) return;
+        Instantiate(explotionPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 }
