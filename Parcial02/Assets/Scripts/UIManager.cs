@@ -13,18 +13,20 @@ public class UIManager : MonoBehaviour
     public Vector2 speedY;
     public Text speedTextY;
     public Text speedTextX;
+    public Text level;
     public Animator animatorScene;
     private int SceneIndex;
     void Start()
     {
         gasSlider.SetMaxGas(player.gas);
+        level.text= GameManager.GetInstance().level.ToString();
     }
     void Update()
     {
         if (!GameManager.GetInstance().gameOver)
         {
-            speedTextX.text = (player.GetComponent<Rigidbody2D>().velocity.x).ToString();
-            speedTextY.text = (player.GetComponent<Rigidbody2D>().velocity.y).ToString();
+            speedTextX.text = ((int)(player.GetComponent<Rigidbody2D>().velocity.x*10)).ToString();
+            speedTextY.text = ((int)(player.GetComponent<Rigidbody2D>().velocity.y*10)).ToString();
             gasSlider.SetGas(player.gas);
         }
         SceneFade();

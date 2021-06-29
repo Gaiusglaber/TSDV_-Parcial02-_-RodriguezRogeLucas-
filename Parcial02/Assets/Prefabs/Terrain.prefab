@@ -77,12 +77,12 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
   m_Sprites:
-  - {fileID: -1010255394613501995, guid: 6ac88df0374246c4295add64f964e522, type: 3}
-  - {fileID: -1010255394613501995, guid: 6ac88df0374246c4295add64f964e522, type: 3}
-  - {fileID: -1010255394613501995, guid: 6ac88df0374246c4295add64f964e522, type: 3}
-  - {fileID: -3309781605116015348, guid: 6ac88df0374246c4295add64f964e522, type: 3}
-  - {fileID: -3309781605116015348, guid: 6ac88df0374246c4295add64f964e522, type: 3}
-  - {fileID: -3309781605116015348, guid: 6ac88df0374246c4295add64f964e522, type: 3}
+  - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
+  - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
+  - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
+  - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
+  - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
+  - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
   - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
   - {fileID: 21300000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
   - {fileID: 0}
@@ -91,7 +91,7 @@ SpriteShapeRenderer:
   - {fileID: 0}
   m_LocalAABB:
     m_Center: {x: 0, y: -0.00000023841858, z: -0.00020005}
-    m_Extent: {x: 2.5000002, y: 2.5, z: 0.00020005}
+    m_Extent: {x: 2.2187502, y: 2.21875, z: 0.00020005}
 --- !u!114 &5152650079169034255
 MonoBehaviour:
   m_ObjectHideFlags: 0

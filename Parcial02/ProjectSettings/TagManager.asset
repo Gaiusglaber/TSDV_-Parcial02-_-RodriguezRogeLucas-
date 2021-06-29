@@ -6,6 +6,7 @@ TagManager:
   tags:
   - VideoObject
   - SceneTransition
+  - Plataform
   layers:
   - Default
   - TransparentFX

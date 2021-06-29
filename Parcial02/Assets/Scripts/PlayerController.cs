@@ -15,11 +15,13 @@ public class PlayerController : MonoBehaviour
     private float boundsZoomCamera=0;
     private float CantZoomCamera = 3;
     private float StartZoomCamera = 5;
+    private Vector3 CameraInitialPosition;
     [Range(0,5)]public float Distancex,Distancey;
     private bool canZoom = false;
     void Start()
     {
         camera = Camera.main;
+        CameraInitialPosition = camera.transform.position;
     }
     void Update()
     {
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isInside&&!canZoom)
         {
-
+            
             camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, CantZoomCamera, lerpTime); //hace zoom
             if (camera.orthographicSize >= CantZoomCamera + 0.5f)
             {
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(!isInside && canZoom)
         {
+            camera.transform.position = Vector3.Lerp(camera.transform.position, CameraInitialPosition, lerpTime);
             camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, StartZoomCamera, lerpTime);// hace de-zoom
             if (camera.orthographicSize >= StartZoomCamera - 0.5f)
             {
@@ -79,6 +82,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Zoom()
     {
+
         if (transform.position.y <= boundsZoomCamera)
         {
             ZoomAction = ZoomInOut;

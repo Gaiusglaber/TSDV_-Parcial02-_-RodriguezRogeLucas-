@@ -210,8 +210,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   win: 0
   gameOver: 0
+  pause: 0
   HighScore: 0
-  level: 0
+  level: 1
 --- !u!4 &145639486
 Transform:
   m_ObjectHideFlags: 0

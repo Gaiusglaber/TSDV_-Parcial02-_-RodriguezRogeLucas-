@@ -34,6 +34,7 @@ public class EndScene : MonoBehaviour
     {
         StartCoroutine("BackPressed");
         GameManager.GetInstance().gameOver = false;
+        GameManager.GetInstance().level=1;
     }
     public void SceneFade()
     {
@@ -45,6 +46,7 @@ public class EndScene : MonoBehaviour
     }
     public void Next()
     {
+        GameManager.GetInstance().level++;
         GameManager.GetInstance().gameOver = false;
         StartCoroutine("NextPressed");
     }

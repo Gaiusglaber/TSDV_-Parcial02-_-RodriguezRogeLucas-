@@ -25,8 +25,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public bool pause = false;
     public int HighScore;
-    public int level = 0;
-
+    public int level = 1;
     private void Start()
     {
         
