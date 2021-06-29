@@ -12,6 +12,7 @@ public class Plataform : MonoBehaviour
             landed = true;
             if (CanLand(collision))
             {
+                collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GameManager.GetInstance().HighScore += 50;
                 GameManager.GetInstance().win = true;
                 GameManager.GetInstance().gameOver = true;

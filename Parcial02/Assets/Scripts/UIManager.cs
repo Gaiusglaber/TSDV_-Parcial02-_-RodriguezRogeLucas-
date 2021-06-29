@@ -14,8 +14,11 @@ public class UIManager : MonoBehaviour
     public Text speedTextY;
     public Text speedTextX;
     public Text level;
+    public Text time;
     public Animator animatorScene;
     private int SceneIndex;
+    private float seconds=0;
+    private int minutes=0;
     void Start()
     {
         gasSlider.SetMaxGas(player.gas);
@@ -23,6 +26,13 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
+        seconds += Time.deltaTime;
+        if (seconds >= 60)
+        {
+            seconds = 0;
+            minutes++;
+        }
+        time.text = minutes.ToString() + ": " + ((int)(seconds)).ToString();
         if (!GameManager.GetInstance().gameOver)
         {
             speedTextX.text = ((int)(player.GetComponent<Rigidbody2D>().velocity.x*10)).ToString();
