@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float gas=10000f;
+    public LayerMask layerMask;
     public GameObject explotionPrefab;
     [SerializeField][Range(0, 50)] float speedForce;
     [SerializeField] [Range(0, 50)] float speedRotation;
@@ -12,9 +13,6 @@ public class PlayerController : MonoBehaviour
     public ZoomCamera ZoomAction;
     [SerializeField] [Range(0, 3)] float lerpTime;
     private Camera camera;
-    private float boundsZoomCamera=0;
-    private float CantZoomCamera = 3;
-    private float StartZoomCamera = 5;
     private Vector3 CameraInitialPosition;
     [Range(0,5)]public float Distancex,Distancey;
     private bool canZoom = false;
@@ -61,34 +59,26 @@ public class PlayerController : MonoBehaviour
     }
     public void ZoomInOut(bool isInside)
     {
-        if (isInside&&!canZoom)
+        if (isInside)
         {
-            
-            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, CantZoomCamera, lerpTime); //hace zoom
-            if (camera.orthographicSize >= CantZoomCamera + 0.5f)
-            {
-                canZoom = true;
-            }
+            camera.transform.position = Vector3.MoveTowards(camera.transform.position, new Vector3(transform.position.x, transform.position.y,camera.transform.position.z), 1);// zoom
+            camera.orthographicSize = 5;
+            canZoom = true;
         }
-        else if(!isInside && canZoom)
+        else if(!isInside)
         {
-            camera.transform.position = Vector3.Lerp(camera.transform.position, CameraInitialPosition, lerpTime);
-            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, StartZoomCamera, lerpTime);// hace de-zoom
-            if (camera.orthographicSize >= StartZoomCamera - 0.5f)
-            {
-                canZoom = false;
-            }
+            camera.transform.position = Vector3.MoveTowards(camera.transform.position, CameraInitialPosition, 1); //de-zoom
+            camera.orthographicSize = 7;
         }
     }
     public void Zoom()
     {
-
-        if (transform.position.y <= boundsZoomCamera)
+        if (Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 1f,layerMask))
         {
             ZoomAction = ZoomInOut;
             ZoomAction(true);
         }
-        else if (ZoomAction!=null)
+        else if (ZoomAction != null)
         {
             ZoomAction(false);
         }

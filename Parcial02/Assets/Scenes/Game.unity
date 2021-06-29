@@ -736,7 +736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825285339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 7.8, z: 0}
+  m_LocalPosition: {x: 9, y: 7.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2009,7 +2009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858567878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 11.58, z: 1}
+  m_LocalPosition: {x: 2.6, y: 11.58, z: 0}
   m_LocalScale: {x: 0.73, y: 0.73, z: 1}
   m_Children:
   - {fileID: 1494474587}
@@ -2055,6 +2055,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gas: 10000
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
   explotionPrefab: {fileID: 564468890016869887, guid: 9a1ea7d8515e0b44bb169fc43ec0a3b7,
     type: 3}
   speedForce: 50
@@ -2225,7 +2228,7 @@ GameObject:
   - component: {fileID: 2018332873}
   - component: {fileID: 2018332872}
   - component: {fileID: 2018332876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
