@@ -676,8 +676,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503380770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.97, y: 8.47, z: 0}
-  m_LocalScale: {x: 4.133167, y: 3.7180853, z: 1}
+  m_LocalPosition: {x: 12.02, y: 8.24, z: 0}
+  m_LocalScale: {x: 6.398054, y: 4.0077033, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2623,8 +2623,6 @@ MonoBehaviour:
   terrain: {fileID: 2018332873}
   MaxY: 10
   MinY: 5
-  TerrainPrefab: {fileID: 5152650079169034289, guid: 8bad5485d39249344a73be50ee2fed4f,
-    type: 3}
   pointsSpriteShape: 60
 --- !u!114 &2018332873
 MonoBehaviour:
@@ -2731,7 +2729,7 @@ SpriteShapeRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: 3edd456376e8ebf41bf9c3eaefadaedd, type: 3}
@@ -2747,7 +2745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018332871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 1}
+  m_LocalPosition: {x: -3.5, y: 0.15, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
